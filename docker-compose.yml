@@ -1,0 +1,6 @@
+services:
+  dev:
+    image: python:latest
+    tty: true
+    volumes:
+      - .:/root/optres
