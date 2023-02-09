@@ -1,0 +1,43 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+authors = ["kagemeka <kagemeka1@gmail.com>"]
+description = "Yet another Rust's Option<T> and Result<T, E> simple implementation in Python."
+documentation = "https://kagemeka.github.io/optres"
+repository = "https://github.com/kagemeka/optres"
+homepage = "https://github.com/kagemeka/optres#readme"
+keywords = ["rust", "option", "result"]
+license = "Apache-2.0"
+name = "optres"
+packages = [{ include = "optres" }]
+readme = "README.md"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+black = "*"
+flake8 = "*"
+isort = "*"
+mypy = "*"
+pre-commit = "*"
+pytest = "*"
+pdoc = "^12"
+
+[tool.black]
+line-length = 79
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+strict = true
+implicit_reexport = true
+
+[tool.pytest.ini_options]
+python_files = ["*.py"]
+python_classes = ["Test*", "_Test*"]
+python_functions = ["test", "_test", "_test_*", "test_*"]
