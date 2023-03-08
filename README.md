@@ -28,28 +28,4 @@ python3 -m pip install -U optres
 
 ## Example
 
-```py
-from optres import unwrap, Result, Err, is_ok, is_err, unwrap_err
-from typing import LiteralString
-
-
-def return_result(x: int | None) -> Result[int, LiteralString]:
-    return Err("not int") if x is None else x
-
-
-def example() -> None:
-    a: int | None = 1
-    c: int = unwrap(a)
-    print(c)
-    assert is_ok(return_result(a))
-    a = None
-    # unwrap(a) # error := panic in Rust.
-    may_be_err = return_result(a)
-    assert is_err(may_be_err)
-    print(unwrap_err(may_be_err))
-
-
-if __name__ == "__main__":
-    example()
-
-```
+https://github.com/kagemeka/optres/blob/0bd5a16a6465a8c1f632e322b5376cb6847f73b2/example.py#L1-L23
